@@ -1,7 +1,7 @@
 %global release 1
 
 Name:       foreman-installer
-Epoch:      1
+Epoch:      2
 Version:    3.14.0
 Release:    %{?prerelease:0.}%{release}%{?prerelease:.}%{?prerelease}%{?nightly}%{?dist}
 Summary:    Puppet-based installer for The Foreman
@@ -14,13 +14,13 @@ BuildArch:  noarch
 
 Requires:   curl
 Requires:   hostname
-Requires:   puppet-agent >= 7.0.0
+Requires:   openvox-agent >= 8.0.0
 Requires:   rubygem(kafo) >= 7.6.0
 Requires:   rubygem(kafo) < 8.0.0
 Requires:   ruby(release)
 
 BuildRequires: asciidoc
-BuildRequires: puppet-agent >= 7.0.0
+BuildRequires: openvox-agent >= 8.0.0
 BuildRequires: rubygem(rake)
 BuildRequires: rubygem(kafo) >= 7.6.0
 BuildRequires: rubygem(kafo) < 8.0.0
@@ -124,6 +124,9 @@ foreman-installer --scenario katello --migrations-only > /dev/null
 %{_sbindir}/foreman-proxy-certs-generate
 
 %changelog
+* Fri Apr 11 2025 Patrick Creech <pcreech@redhat.com> - 1:3.14.0-2
+- repackage of Foreman 3.14.0 depending against only openvox puppet - testing only
+
 * Wed Mar 19 2025 Patrick Creech <pcreech@redhat.com> - 1:3.14.0-1
 - Release foreman-installer 3.14.0
 
