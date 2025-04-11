@@ -4,12 +4,12 @@
 Summary: Puppet documentation via YARD
 Name: puppet-agent-%{gem_name}
 Version: 4.1.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: ASL-2.0
 URL: https://github.com/puppetlabs/puppetlabs-strings
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
-Requires: puppet-agent >= 7
+Requires: openvox-agent >= 8
 Requires: (puppet-agent-yard >= 0.9.5 with puppet-agent-yard < 1)
 Requires: (puppet-agent-rgen >= 0.9 with puppet-agent-rgen < 1)
 BuildArch: noarch
@@ -49,6 +49,9 @@ else  # upgrade
 fi
 
 %changelog
+* Fri Apr 11 2025 Matt Darcy <matt@projecthugo.co.uk> - 4.1.2-2
+- repackage of 4.1.2 built against openvox rather than puppet
+
 * Thu Jan 04 2024 Ewoud Kohl van Wijngaarden <ewoud@kohlvanwijngaarden.nl> - 4.1.2-1
 - Update to 4.1.2
 
