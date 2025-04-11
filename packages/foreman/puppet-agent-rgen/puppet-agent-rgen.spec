@@ -4,16 +4,16 @@
 Summary: OAuth Core Ruby implementation for Puppet Agent
 Name: puppet-agent-%{gem_name}
 Version: 0.9.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://rubydoc.info/gems/rgen
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
-Requires: puppet-agent
+Requires: openvox-agent
 BuildArch: noarch
 
 %description
-Rgen for Puppet Agent.
+Rgen for openvox Puppet Agent.
 
 %prep
 %setup -q -c -T
@@ -50,6 +50,9 @@ if ! /opt/puppetlabs/puppet/bin/gem list %{gem_name} | grep %{gem_name} | grep -
 fi
 
 %changelog
+* Fri Apr 11 2025 Matt Darcy <matt@projecthugo.co.uk> - 0.9.0-2
+- repackage of 0.9.0 to depend on openvox intead of puppet
+
 * Thu Jan 04 2024 Ewoud Kohl van Wijngaarden <ewoud@kohlvanwijngaarden.nl> - 0.9.0-1
 - Update to 0.9.0
 
