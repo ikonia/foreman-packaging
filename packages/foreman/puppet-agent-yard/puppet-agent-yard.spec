@@ -4,12 +4,12 @@
 Summary: Documentation generation tool for Ruby
 Name: puppet-agent-%{gem_name}
 Version: 0.9.36
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: MIT
 URL: http://yardoc.org/
 Source0: https://rubygems.org/gems/%{gem_name}-%{version}.gem
-Requires: puppet-agent
+Requires: openvox-agent
 BuildArch: noarch
 
 %description
@@ -46,6 +46,9 @@ else  # upgrade
 fi
 
 %changelog
+* Fri Apr 11 2025 Eric D. Helms <ericdhelms@gmail.com> - 0.9.36-2
+- repackage of yard 0.9.36 to depend on openvox only instead of puppet
+
 * Wed Apr 03 2024 Eric D. Helms <ericdhelms@gmail.com> - 0.9.36-1
 - Update yard to 0.9.36
 
