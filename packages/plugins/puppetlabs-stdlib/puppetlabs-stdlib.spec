@@ -1,12 +1,12 @@
 Name:		puppetlabs-stdlib
 Version:	9.4.1
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Puppet Labs Standard Library
 License:	ASL 2.0
 URL:		https://github.com/puppetlabs/puppetlabs-stdlib
 Source0:	https://forge.puppet.com/v3/files/%{name}-%{version}.tar.gz
 BuildArch:	noarch
-Requires:	((puppet-agent >= 7 with puppet-agent < 9) or (puppet >= 7 with puppet < 9))
+Requires:	openvox-agent
 
 %description
 Puppet Labs Standard Library module.
@@ -28,6 +28,9 @@ cp -rp functions/ lib/ manifests/ types/ metadata.json %{buildroot}%{_datadir}/p
 %{_datadir}/puppet/modules/stdlib
 
 %changelog
+* Fri Apr 11 2025 Matt Darcy <matt@projecthugo.co.uk> - 9.4.1-2
+- repackage of 9.4.1-2 depending against openvox instead of puppet
+
 * Mon Nov 13 2023 Ewoud Kohl van Wijngaarden <ewoud@kohlvanwijngaarden.nl> - 9.4.1-1
 - Update to 9.4.1
 
